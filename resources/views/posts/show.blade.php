@@ -6,9 +6,6 @@
         <x-validation-errors :errors="$errors" />
 
         <article class="mb-2">
-            <h2 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-1 text-3xl md:text-4xl">{{ $post->title }}
-            </h2>
-            <h3>{{ $post->user->name }}</h3>
             <p class="text-sm mb-2 md:text-base font-normal text-gray-600">
                 <span
                     class="text-red-400 font-bold">{{ date('Y-m-d H:i:s', strtotime('-1 day')) < $post->created_at ? 'NEW' : '' }}</span>

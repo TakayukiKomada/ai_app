@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+
 
 class PostController extends Controller
 {
@@ -15,11 +17,22 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $posts = Post::with('user')->latest()->paginate(4);
 
-        return view('posts.index', compact('posts'));
+        $keyword = $request->input('keyword');
+
+        $query = Post::query();
+
+        if(!empty($keyword)) {
+            $query->where('title', 'LIKE', "%{$keyword}%");
+        }
+
+        $posts = $query->get();
+
+        return view('posts.index', compact('posts', 'keyword'));
+
     }
 
     /**

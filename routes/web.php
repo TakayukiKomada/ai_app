@@ -33,4 +33,7 @@ Route::resource('posts.comments', CommentController::class)
     ->only(['create', 'store', 'edit', 'update', 'destroy'])
     ->middleware('auth');
 
+    // Route::get('/', [PostController::class, 'index']);
+
+
 require __DIR__.'/auth.php';

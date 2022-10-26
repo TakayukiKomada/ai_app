@@ -2,6 +2,13 @@
     <div class="container max-w-7xl mx-auto px-4 md:px-12 pb-3 mt-3">
 
         <x-flash-message :message="session('notice')" />
+        
+<div>
+  <form action="{{ route('posts.index') }}" method="GET">
+    <input type="text" name="keyword" value="{{ $keyword }}">
+    <input type="submit" value="検索">
+  </form>
+</div>
 
         <div class="flex flex-wrap -mx-1 lg:-mx-4 mb-4">
             @foreach ($posts as $post)
@@ -12,6 +19,6 @@
                 </article>
             @endforeach
         </div>
-        {{ $posts->links() }}
+        {{-- {{ $posts->links() }} --}}
     </div>
 </x-app-layout> 

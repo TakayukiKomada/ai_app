@@ -19,9 +19,8 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Post::with('user')->latest()->paginate(4);
-
         $keyword = $request->input('keyword');
+
 
         $query = Post::query();
 
@@ -29,6 +28,7 @@ class PostController extends Controller
             $query->where('title', 'LIKE', "%{$keyword}%");
         }
 
+        $posts = Post::with('user')->latest()->paginate(10);
         $posts = $query->get();
 
         return view('posts.index', compact('posts', 'keyword'));

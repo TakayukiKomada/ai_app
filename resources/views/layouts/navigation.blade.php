@@ -19,7 +19,7 @@
                             @auth
                                 <div>{{ Auth::user()->name }}</div>
                             @else
-                                <div>guest</div>
+                                <div>ゲスト</div>
                             @endauth
 
                             <div class="ml-1">
@@ -34,22 +34,22 @@
                         <!-- Authentication -->
                         @auth
                             <x-dropdown-link :href="route('posts.create')">
-                                {{ __('Create Post') }}
+                                {{ __('画像登録') }}
                             </x-dropdown-link>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('ログアウト') }}
                                 </x-dropdown-link>
                             </form>
                         @else
                             <x-dropdown-link :href="route('register')">
-                                {{ __('Sign Up') }}
+                                {{ __('アカウント登録') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('login')">
-                                {{ __('Log In') }}
+                                {{ __('ログイン') }}
                             </x-dropdown-link>
                         @endauth
                     </x-slot>
@@ -87,14 +87,14 @@
                 <div class="mt-3 space-y-1">
                     <!-- Authentication -->
                     <x-responsive-nav-link :href="route('posts.create')">
-                        {{ __('Create Post') }}
+                        {{ __('画像登録') }}
                     </x-responsive-nav-link>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <x-responsive-nav-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('ログアウト') }}
                         </x-responsive-nav-link>
                     </form>
                 </div>
@@ -105,10 +105,10 @@
 
                 <div class="mt-3 space-y-1">
                     <x-responsive-nav-link :href="route('register')">
-                        {{ __('Sign Up') }}
+                        {{ __('アカウント登録') }}
                     </x-responsive-nav-link>
                     <x-responsive-nav-link :href="route('login')">
-                        {{ __('Log In') }}
+                        {{ __('ログイン') }}
                     </x-responsive-nav-link>
                 </div>
             @endauth

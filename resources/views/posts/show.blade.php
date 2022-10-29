@@ -1,4 +1,6 @@
 <x-app-layout>
+    <x-slot name="header">
+    </x-slot>
     <div class="container lg:w-3/4 md:w-4/5 w-11/12 mx-auto my-8 px-8 py-4 bg-white shadow-md">
 
         <x-flash-message :message="session('notice')" />
@@ -33,7 +35,8 @@
             <hr class="my-4">
 
             <div class="flex justify-end">
-                <a href="{{ route('posts.comments.create', $post) }}" class="bg-indigo-400 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block">コメント登録</a>
+                <a href="{{ route('posts.comments.create', $post) }}"
+                    class="bg-indigo-400 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block">コメント登録</a>
             </div>
         @endauth
 
@@ -62,4 +65,9 @@
             @endforeach
         </section>
     </div>
+    <x-slot name="footer">
+        <h2 class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            ©️ koma company
+        </h2>
+    </x-slot>
 </x-app-layout>

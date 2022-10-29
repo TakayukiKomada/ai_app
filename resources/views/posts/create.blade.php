@@ -1,4 +1,6 @@
 <x-app-layout>
+    <x-slot name="header">
+    </x-slot>
     <div class="container lg:w-1/2 md:w-4/5 w-11/12 mx-auto mt-8 px-8 bg-white shadow-md">
         <h2 class="text-center text-lg font-bold pt-6 tracking-widest">画像登録</h2>
 
@@ -33,4 +35,9 @@
                 class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         </form>
     </div>
+    <x-slot name="footer">
+        <h2 class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            ©️ koma company
+        </h2>
+    </x-slot>
 </x-app-layout>

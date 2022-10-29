@@ -28,10 +28,9 @@ class PostController extends Controller
             $query->where('title', 'LIKE', "%{$keyword}%");
         }
 
-        $posts = Post::with('user')->latest()->paginate(10);
-        $posts = $query->get();
+        $posts = $query->paginate(10);
 
-        return view('posts.index', compact('posts', 'keyword'));
+        return view('posts.index', compact('posts','keyword'));
 
     }
 

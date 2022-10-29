@@ -1,1 +1,1 @@
-<h1 class="text-lg">AI FREE </h1>
+<h1 class="text-lg text-white">AI FREE </h1>

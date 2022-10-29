@@ -36,7 +36,7 @@
         </form>
     </div>
     <x-slot name="footer">
-        <h2 class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <h2 class="block text-sm text-white sm:text-center dark:text-gray-400">
             ©️ koma company
         </h2>
     </x-slot>

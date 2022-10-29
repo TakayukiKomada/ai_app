@@ -34,7 +34,7 @@
             {{ $slot }}
         </main>
         <!-- Page fooder -->
-        <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900 text-center">
+        <footer class="p-4 bg-black rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900 text-center">
             {{ $footer }}
         </footer>
     </div>

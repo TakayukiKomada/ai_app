@@ -4,8 +4,9 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             <div>
                 <form action="{{ route('posts.index') }}" method="GET">
-                    <input type="text" name="keyword" value="{{ $keyword }}">
-                    <input type="submit" value="検索">
+                    <input type="text" name="keyword" value="{{ $keyword }}" placeholder="こちらに検索したい画像のワードを入れてください"
+                    class="shadow appearance-none border-red-500 border rounded w-full py-2 px-3 text-gray-700 mb-5 leading-tight focus:outline-none focus:shadow-outline">
+                    <input type="submit" value="検索" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">
                 </form>
             </div>
         </h2>
